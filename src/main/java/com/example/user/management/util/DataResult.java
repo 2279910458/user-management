@@ -41,11 +41,15 @@ public class DataResult<T> {
         return new DataResult(ResponseCode.OK, data);
     }
 
-    public static<T> DataResult<T> fail(){
+    public static DataResult fail() {
         return new DataResult<>(ResponseCode.ERROR);
     }
 
-    public static<T> DataResult<T> fail(String message){
+    public static DataResult fail(String message) {
         return new DataResult<>(ResponseCode.ERROR, message);
+    }
+
+    public static DataResult fail(Integer code, String message) {
+        return new DataResult(code, message);
     }
 }
